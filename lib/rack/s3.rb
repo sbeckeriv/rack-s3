@@ -73,7 +73,7 @@ module Rack
     # Say great things about `_call`
     def _call(env)
       @env = env
-      [ 200, headers, object.value ]
+      [ 200, headers, [object.value] ]
     rescue AWS::S3::NoSuchKey
       not_found
     end
